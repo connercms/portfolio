@@ -1,0 +1,107 @@
+<!doctype html>
+<html data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Portfolio</title>
+    <meta name="description" content="Portfolio website" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/components.css" />
+    <meta name="robots" content="noindex" />
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  </head>
+
+  <body>
+    <main class="d-flex d-flex-column-sm gap-3 p-3">
+      <div class="d-flex-column flex gap-3">
+        <section class="card">
+          <h1>Conner Shannon</h1>
+          <hr />
+          <p>
+            I design and build software systems with an emphasis on clarity,
+            utility, and long-term maintainability.
+          </p>
+          <hr />
+
+          <div class="d-flex justify-content-between">
+            <a href="#problems" class="text-decoration-none"
+              >&#8594; Problems I've Solved</a
+            >
+            <a href="#mywork" class="text-decoration-none">&#8594; My Work</a>
+            <a href="#fieldnotes" class="text-decoration-none"
+              >&#8594; Field Notes</a
+            >
+          </div>
+          <span></span>
+        </section>
+
+        <section class="card">
+          <h2 id="problems">Problems I've Solved</h2>
+          <hr />
+          <ul>
+            <li>Eliminating redundancy and storage in S3 buckets</li>
+            <li>Enabling multi-user workflows with cloud backups</li>
+            <li>Creating a simple URL shortener service</li>
+            <li>Designing highly performant single-table DynamoDB schemas</li>
+            <li>
+              Full stack development, building user interfaces and the backend
+              to support them
+            </li>
+          </ul>
+        </section>
+
+        <section class="card">
+          <h2 id="fieldnotes">Field Notes</h2>
+          <hr />
+          <div id="fieldnotes-list"></div>
+        </section>
+      </div>
+
+      <div class="d-flex-column flex gap-3">
+        <article id="article-panel" class="card">
+          <!-- <h2 id="fn-title"></h2> -->
+        </article>
+
+        <div class="d-flex gap-3">
+          <div class="card flex">
+            <h2>Recent Work</h2>
+            <p>Section in progress.</p>
+          </div>
+          <div class="card flex">
+            <h2>About Me</h2>
+            <p>
+              Father. Runner. Software Developer. I like to solve problems and
+              build things that are useful. I enjoy continually learning and
+              being challenged.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="px-3">
+      <button
+        id="btn-theme"
+        onclick="toggleTheme()"
+        aria-pressed="false"
+        type="button"
+      >
+        Dark Mode
+      </button>
+    </footer>
+
+    <script>
+      function toggleTheme() {
+        const root = document.documentElement;
+        const btn = document.getElementById("btn-theme");
+        const isDark = root.dataset.theme === "dark";
+
+        root.dataset.theme = isDark ? "light" : "dark";
+        btn.innerText = isDark ? "Dark Mode" : "Light Mode";
+        btn.setAttribute("aria-pressed", isDark);
+      }
+    </script>
+    <script src="./js/main.js" async defer />
+  </body>
+</html>
